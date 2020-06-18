@@ -26,13 +26,14 @@ class RestaurantModel {
 
   String toJson() => json.encode(toMap());
 
-  factory RestaurantModel.fromMap(Map<String, dynamic> json) => RestaurantModel(
+  factory RestaurantModel.fromMap(Map<String, dynamic> json) =>
+      RestaurantModel(
         restaurantId:
-            json["restaurant_id"] == null ? null : json["restaurant_id"],
+        json["restaurant_id"] == null ? null : json["restaurant_id"],
         restaurantName:
-            json["restaurant_name"] == null ? null : json["restaurant_name"],
+        json["restaurant_name"] == null ? null : json["restaurant_name"],
         restaurantImage:
-            json["restaurant_image"] == null ? null : json["restaurant_image"],
+        json["restaurant_image"] == null ? null : json["restaurant_image"],
         tableId: json["table_id"] == null ? null : json["table_id"],
         tableName: json["table_name"] == null ? null : json["table_name"],
         branchName: json["branch_name"] == null ? null : json["branch_name"],
@@ -40,10 +41,11 @@ class RestaurantModel {
         tableMenuList: json["table_menu_list"] == null
             ? null
             : List<TableMenuList>.from(
-                json["table_menu_list"].map((x) => TableMenuList.fromMap(x))),
+            json["table_menu_list"].map((x) => TableMenuList.fromMap(x))),
       );
 
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() =>
+      {
         "restaurant_id": restaurantId == null ? null : restaurantId,
         "restaurant_name": restaurantName == null ? null : restaurantName,
         "restaurant_image": restaurantImage == null ? null : restaurantImage,
@@ -77,11 +79,12 @@ class TableMenuList {
 
   String toJson() => json.encode(toMap());
 
-  factory TableMenuList.fromMap(Map<String, dynamic> json) => TableMenuList(
+  factory TableMenuList.fromMap(Map<String, dynamic> json) =>
+      TableMenuList(
         menuCategory:
-            json["menu_category"] == null ? null : json["menu_category"],
+        json["menu_category"] == null ? null : json["menu_category"],
         menuCategoryId:
-            json["menu_category_id"] == null ? null : json["menu_category_id"],
+        json["menu_category_id"] == null ? null : json["menu_category_id"],
         menuCategoryImage: json["menu_category_image"] == null
             ? null
             : json["menu_category_image"],
@@ -89,14 +92,15 @@ class TableMenuList {
         categoryDishes: json["category_dishes"] == null
             ? null
             : List<CategoryDish>.from(
-                json["category_dishes"].map((x) => CategoryDish.fromMap(x))),
+            json["category_dishes"].map((x) => CategoryDish.fromMap(x))),
       );
 
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() =>
+      {
         "menu_category": menuCategory == null ? null : menuCategory,
         "menu_category_id": menuCategoryId == null ? null : menuCategoryId,
         "menu_category_image":
-            menuCategoryImage == null ? null : menuCategoryImage,
+        menuCategoryImage == null ? null : menuCategoryImage,
         "nexturl": nexturl == null ? null : nexturl,
         "category_dishes": categoryDishes == null
             ? null
@@ -123,22 +127,24 @@ class AddonCat {
 
   String toJson() => json.encode(toMap());
 
-  factory AddonCat.fromMap(Map<String, dynamic> json) => AddonCat(
+  factory AddonCat.fromMap(Map<String, dynamic> json) =>
+      AddonCat(
         addonCategory:
-            json["addon_category"] == null ? null : json["addon_category"],
+        json["addon_category"] == null ? null : json["addon_category"],
         addonCategoryId: json["addon_category_id"] == null
             ? null
             : json["addon_category_id"],
         addonSelection:
-            json["addon_selection"] == null ? null : json["addon_selection"],
+        json["addon_selection"] == null ? null : json["addon_selection"],
         nexturl: json["nexturl"] == null ? null : json["nexturl"],
         addons: json["addons"] == null
             ? null
             : List<CategoryDish>.from(
-                json["addons"].map((x) => CategoryDish.fromMap(x))),
+            json["addons"].map((x) => CategoryDish.fromMap(x))),
       );
 
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() =>
+      {
         "addon_category": addonCategory == null ? null : addonCategory,
         "addon_category_id": addonCategoryId == null ? null : addonCategoryId,
         "addon_selection": addonSelection == null ? null : addonSelection,
@@ -181,18 +187,19 @@ class CategoryDish {
 
   String toJson() => json.encode(toMap());
 
-  factory CategoryDish.fromMap(Map<String, dynamic> json) => CategoryDish(
+  factory CategoryDish.fromMap(Map<String, dynamic> json) =>
+      CategoryDish(
         dishId: json["dish_id"] == null ? null : json["dish_id"],
         dishName: json["dish_name"] == null ? null : json["dish_name"],
         dishPrice:
-            json["dish_price"] == null ? null : json["dish_price"].toDouble(),
+        json["dish_price"] == null ? null : json["dish_price"].toDouble(),
         dishImage: json["dish_image"] == null ? null : json["dish_image"],
         dishCurrency:
-            json["dish_currency"] == null ? null : json["dish_currency"],
+        json["dish_currency"] == null ? null : json["dish_currency"],
         dishCalories:
-            json["dish_calories"] == null ? null : json["dish_calories"],
+        json["dish_calories"] == null ? null : json["dish_calories"],
         dishDescription:
-            json["dish_description"] == null ? null : json["dish_description"],
+        json["dish_description"] == null ? null : json["dish_description"],
         dishAvailability: json["dish_Availability"] == null
             ? null
             : json["dish_Availability"],
@@ -201,10 +208,11 @@ class CategoryDish {
         addonCat: json["addonCat"] == null
             ? null
             : List<AddonCat>.from(
-                json["addonCat"].map((x) => AddonCat.fromMap(x))),
+            json["addonCat"].map((x) => AddonCat.fromMap(x))),
       );
 
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() =>
+      {
         "dish_id": dishId == null ? null : dishId,
         "dish_name": dishName == null ? null : dishName,
         "dish_price": dishPrice == null ? null : dishPrice,

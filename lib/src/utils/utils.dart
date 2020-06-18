@@ -3,7 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 Size screenSize(BuildContext context) {
-  return MediaQuery.of(context).size;
+  return MediaQuery
+      .of(context)
+      .size;
 }
 
 double screenHeight(BuildContext context, {double dividedBy = 1}) {

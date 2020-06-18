@@ -25,60 +25,66 @@ class _HomeState extends State<Home> {
           builder: (context, snapshot) {
             return snapshot.hasData
                 ? DefaultTabController(
-                    length: snapshot.data.tableMenuList.length,
-                    child: Scaffold(
-                      appBar: AppBar(
-                          title: Text(
-                            snapshot.data.restaurantName,
-                            style: Theme.of(context).textTheme.headline,
-                          ),
-                          leading: BackButton(
-                            color: Colors.black45,
-                          ),
-                          actions: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Text('My Orders',
-                                    style: Theme.of(context).textTheme.subhead),
-                                StreamBuilder<int>(
-                                    stream: cartCounterBloc.getCount,
-                                    builder: (context, snap) {
-                                      print(snap.data.toString());
-                                      return Badge(
-                                          padding: EdgeInsets.all(3),
-                                          badgeContent: Text(
-                                            snap.data.toString(),
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          ),
-                                          position: BadgePosition.topRight(
-                                              right: 8, top: 6),
-                                          child: IconButton(
-                                              padding: EdgeInsets.all(0),
-                                              icon: Icon(
-                                                Icons.shopping_cart,
-                                                color: Colors.black45,
-                                              ),
-                                              onPressed: null));
-                                    }),
-                              ],
-                            )
-                          ],
-                          bottom: TabBar(
-                            tabs: tabList(snapshot.data.tableMenuList),
-                            isScrollable: true,
-                          )),
-                      body: TabBarView(
-                        children: snapshot.data.tableMenuList
-                            .map((tableMenuItem) =>
-                                HomeListView(tableMenuItem.categoryDishes))
-                            .toList(),
+                length: snapshot.data.tableMenuList.length,
+                child: Scaffold(
+                  appBar: AppBar(
+                      title: Text(
+                        snapshot.data.restaurantName,
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .headline,
                       ),
-                    ))
+                      leading: BackButton(
+                        color: Colors.black45,
+                      ),
+                      actions: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text('My Orders',
+                                style: Theme
+                                    .of(context)
+                                    .textTheme
+                                    .subhead),
+                            StreamBuilder<int>(
+                                stream: cartCounterBloc.getCount,
+                                builder: (context, snap) {
+                                  print(snap.data.toString());
+                                  return Badge(
+                                      padding: EdgeInsets.all(3),
+                                      badgeContent: Text(
+                                        snap.data.toString(),
+                                        style:
+                                        TextStyle(color: Colors.white),
+                                      ),
+                                      position: BadgePosition.topRight(
+                                          right: 8, top: 6),
+                                      child: IconButton(
+                                          padding: EdgeInsets.all(0),
+                                          icon: Icon(
+                                            Icons.shopping_cart,
+                                            color: Colors.black45,
+                                          ),
+                                          onPressed: null));
+                                }),
+                          ],
+                        )
+                      ],
+                      bottom: TabBar(
+                        tabs: tabList(snapshot.data.tableMenuList),
+                        isScrollable: true,
+                      )),
+                  body: TabBarView(
+                    children: snapshot.data.tableMenuList
+                        .map((tableMenuItem) =>
+                        HomeListView(tableMenuItem.categoryDishes))
+                        .toList(),
+                  ),
+                ))
                 : Material(
-                    child: Center(
-                    child: CircularProgressIndicator(),
-                  ));
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ));
           }),
     );
   }

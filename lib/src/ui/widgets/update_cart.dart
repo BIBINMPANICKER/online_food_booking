@@ -41,7 +41,7 @@ class _UpdateCartState extends State<UpdateCart> {
             Text(
               itemsAdded.toString(),
               style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
             ),
             IconButton(
               onPressed: () {

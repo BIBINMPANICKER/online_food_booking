@@ -8,14 +8,14 @@ import 'base_bloc.dart';
 
 class RestaurantBloc extends BaseBloc {
   StreamController<RestaurantModel> _restaurantController =
-      new StreamController<RestaurantModel>.broadcast();
+  new StreamController<RestaurantModel>.broadcast();
 
   Stream<RestaurantModel> get restaurantRes => _restaurantController.stream;
 
 // fetch the restaurant's details
   getRestaurantDetails() async {
     final restaurantResponse =
-        await ObjectFactory().repository.getRestaurantDetails();
+    await ObjectFactory().repository.getRestaurantDetails();
     if (restaurantResponse != null) {
       _restaurantController.sink.add(restaurantResponse);
     } else {
